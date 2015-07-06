@@ -1,10 +1,10 @@
 # LNCP - Node - Hardware
 
 ## Eckdaten
-
-register 0-32 -> siehe default register 
-register 32 -> eeprom zelle 0-7  
-register 33 -> eeprom zelle 7-15  
+Register | Funktion | Kommentar
+---------- | ------------ | -------------
+0-31 | default | siehe default register 
+32 | RESET  | write "RESET   " to reboot hardware
 
 
 
