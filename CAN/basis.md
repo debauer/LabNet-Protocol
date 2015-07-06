@@ -10,17 +10,29 @@ CAN extended IDs - 29 Bit
 
 ## Maskierung
 
-### Telegram Klassifizierung
+Klassifizierung | HW ID | SW ID | Funktion ID
+------------- | ------------- | ------------- | -------------
+xx | xx xxxx xxx | x xxxx xxxx | xxxx xxxx x
 
-| Klassifizierung | other | 
-| xx | 00 0000 0000 0000 0000 0000 0000 000 |
+### Klassifizierung
 
-#### K#00 - Service
+* 2 Bit  
+* Bit 0-1
 
-#### K#01 - Event Broadcast
+### HW ID
 
-##### F#0 - F#0fff ffff f 
+* 9 Bit
+* 512 IDs
+* Bit 2-11
 
-#### K#10 - Node direkt
+### SW ID
 
-#### K#00 - Sensor Broadcast
+* 9 Bit
+* 512 IDs
+* Bit 12-20
+
+### Funktion ID / Register
+
+* 9 Bit
+* 512 IDs
+* Bit 21-29
