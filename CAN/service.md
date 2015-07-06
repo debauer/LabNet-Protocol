@@ -1,4 +1,10 @@
-# LNCP - Register
+# LNCP - Service
+
+## Eckdaten
+
+Adressbereich für Sonderfunktionen.
+* Erstparametrierung von neuen Nodes
+* Auth Konditions
 
 ## Default Register
 
