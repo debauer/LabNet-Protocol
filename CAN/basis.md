@@ -31,8 +31,31 @@ xx | xx xxxx xxx | x xxxx xxxx | xxxx xxxx x
 * 512 IDs
 * Bit 12-20
 
+### Node ID
+
+Kombination aus HW und SW ID.
+
 ### Funktion ID / Register
 
 * 9 Bit
 * 512 IDs
 * Bit 21-29
+
+## Beispiele
+
+* direktes Ansprechen eines HW Nodes
+* HW ID 1 
+* Register 2
+
+Klassifizierung | HW ID | SW ID | Funktion ID
+------------- | ------------- | ------------- | -------------
+01 | 00 0000 001 | 0 0000 0000 | 0000 0001 0
+
+* Sensor Broadcast 
+* HW ID 1
+* SW ID 2
+* Sensor ID 4
+
+Klassifizierung | HW ID | SW ID | Funktion ID
+------------- | ------------- | ------------- | -------------
+11 | 00 0000 001 | 0 0000 0010 | 0000 0010 0
