@@ -2,12 +2,12 @@
 
 ## Eckdaten
 
-* Typ: "eeprom  "
+Extern: 
+Schreib/lesbar via EEPROM Telegramme
+32k EEPROM - 4096 Byte - 12Bit Adresse
 
-1:1 Mapping in den Adressbereich 
-register 0-32 -> siehe default register 
-register 32 -> eeprom zelle 0-7  
-register 33 -> eeprom zelle 7-15  
-
+Intern: 
+1028bit - 128Byte EEPROM
+Sind als 16 Register verfügbar
 
 

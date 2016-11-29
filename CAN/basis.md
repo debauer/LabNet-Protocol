@@ -3,59 +3,76 @@
 ## Eckdaten
 
 CAN extended IDs - 29 Bit  
-3 Bit Telegram Klassifizierung  
-9 Bit HW Adresse (512)
-9 Bit SW Adresse (512)
-9 Bit Funktions Adresse (512 Funktionen/Register)
 
-## Maskierung
+5 Bit Telegram Typ
+12 Bit NODE ID
+12 Bit REGISTER
 
-Klassifizierung | HW ID | SW ID | Funktion ID
-------------- | ------------- | ------------- | -------------
-xx | xx xxxx xxx | x xxxx xxxx | xxxx xxxx x
+## Typen
 
-### Klassifizierung
+### Broadcast Event 00000
 
-* 2 Bit  
-* Bit 0-1
+0x00 Basis
+0xXXXX XXXX XXXX Event ID
 
-### HW ID
 
-* 9 Bit
-* 512 IDs
-* Bit 2-11
+### Local Event 00001
 
-### SW ID
+0x01 Basis
+0xXXXXXX Node ID
+0xYYYYYY Event ID
 
-* 9 Bit
-* 512 IDs
-* Bit 12-20
+Auf Node X Event Y ausführen mit Nutzdaten Z
 
-### Node ID
+### Register 00011
 
-Kombination aus HW und SW ID.
+0x04 Basis
+0xXXXXXX Node ID
+0xYYYYYY Sensor
 
-### Funktion ID / Register
+Register X auf Node Y mit 8 Byte Nutzdaten
 
-* 9 Bit
-* 512 IDs
-* Bit 21-29
+### Announcement 00100
 
-## Beispiele
+0x04 Basis
+0xXXXXXX Node ID
+0xYYYYYY Sensor
 
-* direktes Ansprechen eines HW Nodes
-* HW ID 1 
-* Register 2
+z.B. Sensordaten
+Sensor X auf Node Y mit 8 Byte Nutzdaten
 
-Klassifizierung | HW ID | SW ID | Funktion ID
-------------- | ------------- | ------------- | -------------
-01 | 00 0000 001 | 0 0000 0000 | 0000 0001 0
+### Eeprom 01000 -> 01010
 
-* Sensor Broadcast 
-* HW ID 1
-* SW ID 2
-* Sensor ID 4
+0x08 -> schreiben
+0x09 -> anfragen
+0x10 -> antwort
 
-Klassifizierung | HW ID | SW ID | Funktion ID
-------------- | ------------- | ------------- | -------------
-11 | 00 0000 001 | 0 0000 0010 | 0000 0010 0
+0x08 Basis
+0xXXXXXX Node ID
+0xYYYYYY eeprom Adresse (12Bit = 4096 byte = 32k eeprom)
+
+Adresse = start Adresse im eeprom, von dort werden 1-8 Bytes ins eeprom geschrieben
+Anfrage mit 1-8 Byte dummy daten für die Anzahl abzufragender Bytes.
+
+### SF RXTX 01011
+
+0x05 Basis
+0xXXXXXX Node ID
+0xYYYYYY SF
+
+##### SF Seriel 0x000000 -> 0x0000FF
+
+0x000000 Seriel Ziel (ASCII Ziel ID + console, seriel, rs485)
+0x000001 Seriel Baud (ASCII Ziel ID + Baud 9600, 19200...)
+0x000010 Seriel RX 1 
+0x000011 Seriel RX 2 
+...
+0x00001F Seriel RX 8 
+0x000010 Seriel TX Adr1 (an welchen Node soll TX gesendet werden)
+0x000011 Seriel TX Adr2 (an welchen Node soll TX gesendet werden)
+...
+0x00001F Seriel TX Adr8 (an welchen Node soll TX gesendet werden)
+
+Indem man 2 Nodes gegenseitig die TX adressen mitteilt kann man Seriell Tunneln und gleichzeitig den beiden zuhören. 
+
+##### 

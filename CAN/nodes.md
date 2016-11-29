@@ -2,78 +2,19 @@
 
 ## Eckdaten
 
-Nodes werden mit der Kombination aus HW und SW ID Adressiert. Sie können direkt angesprochen werden und senden bei Event/Sensor Broadcast ihre Node ID immer mit.
-
 ## Feste HW IDs
 
-Register | Funktion | Kommentar
----------- | ------------ | -------------
- 0  | Bridge 0 | MQTT0
- 1  | Bridge 1 | MQTT1
- 2  | unused | 
- 3  | unused | 
- 4  | unused | 
- 5  | unused | 
- 6  | unused | 
- 7  | unused | 
- 8  | unused | 
- 9  | unused | 
- 10 | unused | 
- 11 | unused | 
- 12 | unused | 
- 13 | unused | 
- 14 | unused | 
- 15 | unused | 
- 16 | unused | 
- 17 | unused | 
- 18 | unused | 
- 19 | unused | 
- 20 | unused | 
- 21 | unused | 
- 22 | unused | 
- 23 | unused | 
- 24 | unused | 
- 25 | unused | 
- 26 | unused | 
- 27 | unused | 
- 28 | unused | 
- 29 | unused | 
- 30 | unused | 
- 31 | unused | 
-
-## Feste SW IDs
-
-Register | Funktion | Kommentar
----------- | ------------ | -------------
- 0  | HW | direkte HW Adressierung
- 1  | eeprom | mit 1:1 mapping
- 2  | Temperatur | Default verbaute Temperatur Sensor
- 3  | unused | 
- 4  | unused | 
- 5  | unused | 
- 6  | unused | 
- 7  | unused | 
- 8  | unused | 
- 9  | unused | 
- 10 | unused | 
- 11 | unused | 
- 12 | unused | 
- 13 | unused | 
- 14 | unused | 
- 15 | unused | 
- 16 | unused | 
- 17 | unused | 
- 18 | unused | 
- 19 | unused | 
- 20 | unused | 
- 21 | unused | 
- 22 | unused | 
- 23 | unused | 
- 24 | unused | 
- 25 | unused | 
- 26 | unused | 
- 27 | unused | 
- 28 | unused | 
- 29 | unused | 
- 30 | unused | 
- 31 | unused | 
+Register   | Funktion 		| Kommentar
+---------- | ------------ 	| -------------
+ 0x00 0000  | Bridge 0 		| 
+ 0x00 0001  | Bridge 1 		| 
+ 0x01 0000  | Basis 0 		| 
+ 0x01 0001  | Basis 1 		| 
+ 0x01 0002  | Basis 2 		| 
+ 0x01 0003  | Basis 3 		| 
+ 0x01 0004  | Basis 4 		| 
+ 0xFF 0000  | Power Hub 0 	| 
+ 0xFF 0001  | Power Hub 1 	| 
+ 0xFF 0002  | Power Hub 2 	| 
+ 0xFF 0003  | Power Hub 3 	| 
+	
