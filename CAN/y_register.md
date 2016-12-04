@@ -27,9 +27,6 @@ Register 	| Funktion | Kommentar
 
 Register 	| Funktion | Kommentar
 ---------- 	| ------------ | -------------
-0x00 0010   |  RESET    | write "RESET   " to reboot hardware
-0x00 0011   |  defaultI | write "DEFAULT " to reset internal EEPROM
-0x00 0012   |  defaultE | write "DEFAULT " to reset éxternal EEPROM
 0x00 0013   |  Status  	| "error", "ok", "sleep", "warning"...
 0x00 0014   |  Uhrzeit  | "133712  " -> HourMinuteSeconds - "no clock" -> no clock
 0x00 0015   |  Datum  	| "19121988" -> DayMonthYear - "no clock" -> no clock
