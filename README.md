@@ -13,30 +13,30 @@ CAN extended IDs - 29 Bit
 ### Broadcast Event 00000
 
 0x00 Basis
-0xXXXX XXXX XXXX Event ID
+0xXXX XXX Event ID
 
 
 ### Local Event 00001
 
 0x01 Basis  
-0xXXXXXX Node ID  
-0xYYYYYY Event ID  
+0xXXX Node ID  
+0xYYY Event ID  
 
 Auf Node X Event Y ausführen mit Nutzdaten Z
 
 ### Register 00011
 
 0x03 Basis  
-0xXXXXXX Node ID  
-0xYYYYYY Register  
+0xXXX Node ID  
+0xYYY Register  
 
 Register X auf Node Y mit 8 Byte Nutzdaten
 
 ### Announcement 00100
 
 0x04 Basis  
-0xXXXXXX Node ID  
-0xYYYYYY Sensor / Event 
+0xXXX Node ID  
+0xYYY Sensor / Event 
 
 z.B. Sensordaten
 Sensor X auf Node Y mit 8 Byte Nutzdaten
@@ -48,8 +48,8 @@ Sensor X auf Node Y mit 8 Byte Nutzdaten
 0x0A -> antwort/read
 
 0x08 Basis  
-0xXXXXXX Node ID  
-0xYYYYYY eeprom Adresse (12Bit = 4096 byte = 32k eeprom)  
+0xXXX Node ID  
+0xYYY eeprom Adresse (12Bit = 4096 byte = 32k eeprom)  
 
 Adresse = start Adresse im eeprom, von dort werden 1-8 Bytes ins eeprom geschrieben  
 Anfrage mit 1-8 Byte dummy daten für die Anzahl abzufragender Bytes.  
@@ -58,8 +58,8 @@ Alt. anfrage via Remote REQ an 0x0A, antwortet immer mit 8 Byte
 ### SF RXTX 01011
 
 0x0B Basis  
-0xXXXXXX Node ID  
-0xYYYYYY SF  
+0xXXX Node ID  
+0xYYY SF  
 
 ##### SF Seriel 0x000000 -> 0x0000FF
   
